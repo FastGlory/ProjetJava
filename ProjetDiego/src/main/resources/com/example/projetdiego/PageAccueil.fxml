@@ -12,17 +12,18 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="658.0">
                             <children>
-                                <ImageView fitHeight="338.0" fitWidth="191.0" layoutX="399.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="211.0" fitWidth="260.0" layoutX="326.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@Images/cegep_marie_victorin.jpg" />
+                                        <Image url="@../../../Images/cegep_marie_victorin.jpg" />
                                     </image>
                                 </ImageView>
-                                <ImageView fitHeight="35.0" fitWidth="259.0" layoutX="331.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="35.0" fitWidth="262.0" layoutX="372.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@Images/LogoMarieVicotrin.png" />
+                                        <Image url="@../../../Images/LogoMarieVicotrin.png" />
                                     </image>
                                 </ImageView>
-                                <Label layoutX="29.0" layoutY="52.0" prefHeight="227.0" prefWidth="267.0" text="                  Texte random sur l'école" />
+                                <Label alignment="CENTER" layoutX="47.0" layoutY="63.0" prefHeight="114.0" prefWidth="235.0" text="Bienvenu dans le Cegep Marie-Victorin. Nous sommes les meilleurs programmeurs de ce Cegep" textAlignment="JUSTIFY" wrapText="true" />
+                        <Hyperlink layoutX="378.0" layoutY="253.0" prefHeight="23.0" prefWidth="195.0" text="Hyperlink" />
                             </children>
                         </AnchorPane>
                     </content>

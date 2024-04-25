@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageAccueil">
-   <children>
-      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Accueil">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="658.0" />
-            </content>
-          </Tab>
-          <Tab text="PageCours">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
-            </content>
-          </Tab>
-
-          <Tab text="PageEtudiant">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
-            </content>
-           </Tab>
-          <Tab text="PageEtudiant">
-                <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
-                </content>
-          </Tab>
-
-        </tabs>
-      </TabPane>
-   </children>
+<AnchorPane prefHeight="419.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageAccueil">
+    <children>
+        <TabPane prefHeight="419.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Accueil">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="658.0">
+                            <children>
+                                <ImageView fitHeight="338.0" fitWidth="191.0" layoutX="399.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/cegep_marie_victorin.jpg" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="35.0" fitWidth="259.0" layoutX="331.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/LogoMarieVicotrin.png" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="29.0" layoutY="52.0" prefHeight="227.0" prefWidth="267.0" text="                  Texte random sur l'école" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="PageCours">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                    </content>
+                </Tab>
+                <Tab text="PageEtudiant">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                    </content>
+                </Tab>
+                <Tab text="PageProfesseur">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
 </AnchorPane>

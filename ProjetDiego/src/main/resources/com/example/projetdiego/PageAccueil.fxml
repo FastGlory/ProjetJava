@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="419.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageAccueil">
     <children>
@@ -22,15 +23,29 @@
                                         <Image url="@../../../Images/LogoMarieVicotrin.png" />
                                     </image>
                                 </ImageView>
-                                <Label alignment="CENTER" layoutX="47.0" layoutY="63.0" prefHeight="114.0" prefWidth="235.0" text="Bienvenu dans le Cegep Marie-Victorin. Nous sommes les meilleurs programmeurs de ce Cegep" textAlignment="JUSTIFY" wrapText="true" />
-                        <Hyperlink layoutX="378.0" layoutY="253.0" prefHeight="23.0" prefWidth="195.0" text="Hyperlink" />
+                                <Label alignment="CENTER" layoutX="24.0" layoutY="83.0" prefHeight="138.0" prefWidth="260.0" text="Bienvenu dans le Cegep Marie-Victorin. Nous sommes les meilleurs programmeurs de ce Cegep" textAlignment="JUSTIFY" wrapText="true" />
+                        <Hyperlink layoutX="326.0" layoutY="249.0" prefHeight="25.0" prefWidth="227.0" text="https://cegepmv.ca/">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Hyperlink>
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="PageCours">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0">
+                     <children>
+                        <TreeTableView layoutX="37.0" layoutY="53.0" prefHeight="200.0" prefWidth="526.0">
+                          <columns>
+                            <TreeTableColumn prefWidth="131.0" text="Nom" />
+                              <TreeTableColumn prefWidth="131.0" text="Code" />
+                              <TreeTableColumn prefWidth="131.0" text="Description" />
+                              <TreeTableColumn prefWidth="131.0" text="Professeur" />
+                          </columns>
+                        </TreeTableView>
+                        <Button layoutX="194.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="213.0" text="Ajouter" />
+                     </children></AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="PageEtudiant">

@@ -8,17 +8,17 @@ import javafx.stage.Stage;
 
 public class HelloApplication extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PageAccueil.fxml"));
-        Parent root = loader.load();
-        PageController controller = loader.getController();
-        controller.setStage(primaryStage);
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    public void start(Stage stage) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("PageAccueil.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
-
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

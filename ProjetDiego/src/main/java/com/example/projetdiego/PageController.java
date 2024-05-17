@@ -3,6 +3,7 @@ package com.example.projetdiego;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -11,41 +12,24 @@ import java.io.IOException;
 public class PageController {
 
     private Stage stage;
+    private Scene scene;
+    private Parent root;
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("PageAccueil.fxml"));
-            Parent pageAccueil = loader.load();
-            Scene scene = new Scene(pageAccueil);
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void boutonBackClicked(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("PageAccueil.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
-    @FXML
-    private void boutonAjouterClicked(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("InscriptionPageCours.fxml"));
-            Parent pageInscription = loader.load();
-            Scene scene = new Scene(pageInscription);
-            stage.setScene(scene);
-            System.out.println("Cliqué ! Vous avez changé de page...");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void boutonAjouterClicked(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("InscriptionPageCours.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
-    @FXML
-    private void boutonBackClicked(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("PageAccueil.fxml"));
-            Parent pageAccueil = loader.load();
-            Scene scene = new Scene(pageAccueil);
-            stage.setScene(scene);
-            System.out.println("Cliqué ! Vous avez changé de page...");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
+    // Fixe complet grace à cette vidéo : https://www.youtube.com/watch?v=hcM-R-YOKkQ
 }

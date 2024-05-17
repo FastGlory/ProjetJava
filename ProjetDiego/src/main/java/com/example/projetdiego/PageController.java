@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class PageController {
@@ -45,7 +47,7 @@ public class PageController {
         stage.show();
     }
 
-    public void EnvoyerProfesseurClicked(ActionEvent event) {
+    public void EnvoyerProfesseurClicked(ActionEvent event) throws JsonProcessingException {
         String nom = nomProfesseur.getText();
         String prenom = prenomProfesseur.getText();
         String identifiant = identifiantProfesseur.getText();
@@ -63,6 +65,22 @@ public class PageController {
         System.out.println("Identifiant: " + Professeur.getIdentifiant());
         System.out.println("Salaire: " + Professeur.getSalaire());
 
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = objectMapper.writeValueAsString(Professeur);
+        System.out.println("JSON représentant Professeur :");
+        System.out.println(json);
+
+        professeur deserializedProfesseur = objectMapper.readValue(json, professeur.class);
+        System.out.println("\nObjet Professeur désérialisé :");
+        System.out.println(deserializedProfesseur);
+
+        try {
+            professeur.serialize(Professeur);
+            System.out.println("Professeur enregistré dans le fichier JSON.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erreur lors de l'enregistrement du professeur dans le fichier JSON.");
+        }
     }
 
     public void ReinitialiserProfesseurClicked(ActionEvent event) {

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="419.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageAccueil">
+<AnchorPane prefHeight="419.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageController">
     <children>
         <TabPane prefHeight="419.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -13,18 +13,18 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="658.0">
                             <children>
-                                <ImageView fitHeight="211.0" fitWidth="260.0" layoutX="326.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="211.0" fitWidth="260.0" layoutX="326.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../../../Images/cegep_marie_victorin.jpg" />
                                     </image>
                                 </ImageView>
-                                <ImageView fitHeight="35.0" fitWidth="262.0" layoutX="372.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="178.0" fitWidth="374.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../../../Images/LogoMarieVicotrin.png" />
                                     </image>
                                 </ImageView>
-                                <Label alignment="CENTER" layoutX="24.0" layoutY="83.0" prefHeight="138.0" prefWidth="260.0" text="Bienvenu dans le Cegep Marie-Victorin. Nous sommes les meilleurs programmeurs de ce Cegep" textAlignment="JUSTIFY" wrapText="true" />
-                        <Hyperlink layoutX="326.0" layoutY="249.0" prefHeight="25.0" prefWidth="227.0" text="https://cegepmv.ca/">
+                                <Label alignment="CENTER" layoutX="24.0" layoutY="83.0" prefHeight="138.0" prefWidth="260.0" text="Bienvenue au Cegep Marie-Victorin, Nous sommes Juba et Diego les meilleurs programmeurs de cette technique" textAlignment="JUSTIFY" wrapText="true" />
+                        <Hyperlink layoutX="327.0" layoutY="258.0" prefHeight="25.0" prefWidth="227.0" text="https://cegepmv.ca/">
                            <font>
                               <Font size="14.0" />
                            </font></Hyperlink>
@@ -44,7 +44,7 @@
                               <TreeTableColumn prefWidth="131.0" text="Professeur" />
                           </columns>
                         </TreeTableView>
-                        <Button layoutX="194.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="213.0" text="Ajouter" />
+                         <Button onAction="#boutonAjouterClicked" layoutX="194.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="213.0" text="Ajouter" />
                      </children></AnchorPane>
                     </content>
                 </Tab>
@@ -54,6 +54,11 @@
                     </content>
                 </Tab>
                 <Tab text="PageProfesseur">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                    </content>
+                </Tab>
+                <Tab text="PageLogin">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
                     </content>

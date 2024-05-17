@@ -4,38 +4,41 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageController" >
    <children>
-      <AnchorPane layoutY="-14.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane layoutY="-13.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ListView layoutX="37.0" layoutY="255.0" prefHeight="116.0" prefWidth="291.0" />
-            <TextArea layoutX="182.0" layoutY="148.0" prefHeight="83.0" prefWidth="291.0" />
-            <TextField layoutX="182.0" layoutY="64.0" prefHeight="25.0" prefWidth="200.0" />
-            <TextField layoutX="182.0" layoutY="107.0" prefHeight="25.0" prefWidth="200.0" />
-            <Label layoutX="40.0" layoutY="60.0" prefHeight="32.0" prefWidth="130.0" text="Nom du cours" textAlignment="CENTER">
+            <Label layoutX="27.0" layoutY="84.0" prefHeight="17.0" prefWidth="92.0" text="Nom Cours : ">
                <font>
-                  <Font size="16.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="36.0" layoutY="103.0" prefHeight="32.0" prefWidth="138.0" text="Code du cours" textAlignment="CENTER">
+            <ListView layoutX="473.0" layoutY="125.0" prefHeight="124.0" prefWidth="118.0" />
+            <TextArea layoutX="140.0" layoutY="165.0" prefHeight="83.0" prefWidth="291.0" />
+            <TextField layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="291.0" />
+            <TextField layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="291.0" />
+            <Label layoutX="151.0" layoutY="27.0" prefHeight="32.0" prefWidth="298.0" text="Formulaire inscription Cours" textAlignment="CENTER">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Arial Unicode MS" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="148.0" prefHeight="32.0" prefWidth="185.0" text="Description du cours" textAlignment="CENTER">
+            <Label layoutX="67.0" layoutY="125.0" prefHeight="21.0" prefWidth="52.0" text="Code : ">
                <font>
-                  <Font size="16.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="362.0" layoutY="281.0" prefHeight="32.0" prefWidth="130.0" text="Liste Professeur" textAlignment="CENTER">
+            <Label layoutX="27.0" layoutY="166.0" prefHeight="21.0" prefWidth="102.0" text="Description : ">
                <font>
-                  <Font size="16.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
+            <Label layoutX="473.0" layoutY="95.0" prefHeight="21.0" prefWidth="118.0" text="Liste Professeur">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="129.0" onAction="#boutonBackClicked" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Go back" />
+            <Button layoutX="313.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Send" />
          </children></AnchorPane>
-      <Label prefHeight="32.0" prefWidth="600.0" text="                          Formulaire inscription Cours" textAlignment="CENTER">
-         <font>
-            <Font name="Arial Unicode MS" size="22.0" />
-         </font></Label>
    </children>
 </Pane>

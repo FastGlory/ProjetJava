@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+
 public class PageController {
 
     @FXML
@@ -61,6 +62,7 @@ public class PageController {
         System.out.println("Prenom: " + Professeur.getPrenom());
         System.out.println("Identifiant: " + Professeur.getIdentifiant());
         System.out.println("Salaire: " + Professeur.getSalaire());
+
     }
 
     public void ReinitialiserProfesseurClicked(ActionEvent event) {

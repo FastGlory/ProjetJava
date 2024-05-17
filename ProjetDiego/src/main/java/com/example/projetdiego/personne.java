@@ -1,6 +1,6 @@
 package com.example.projetdiego;
 
-public class personne {
+public class  personne {
     private String nom;
     private String prenom;
     private String Identifiant;

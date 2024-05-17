@@ -24,10 +24,11 @@
                                     </image>
                                 </ImageView>
                                 <Label alignment="CENTER" layoutX="24.0" layoutY="83.0" prefHeight="138.0" prefWidth="260.0" text="Bienvenue au Cegep Marie-Victorin, Nous sommes Juba et Diego les meilleurs programmeurs de cette technique" textAlignment="JUSTIFY" wrapText="true" />
-                        <Hyperlink layoutX="327.0" layoutY="258.0" prefHeight="25.0" prefWidth="227.0" text="https://cegepmv.ca/">
-                           <font>
-                              <Font size="14.0" />
-                           </font></Hyperlink>
+                                <Hyperlink layoutX="327.0" layoutY="258.0" prefHeight="25.0" prefWidth="227.0" text="https://cegepmv.ca/">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Hyperlink>
                             </children>
                         </AnchorPane>
                     </content>
@@ -35,17 +36,18 @@
                 <Tab text="PageCours">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0">
-                     <children>
-                        <TreeTableView layoutX="37.0" layoutY="53.0" prefHeight="200.0" prefWidth="526.0">
-                          <columns>
-                            <TreeTableColumn prefWidth="131.0" text="Nom" />
-                              <TreeTableColumn prefWidth="131.0" text="Code" />
-                              <TreeTableColumn prefWidth="131.0" text="Description" />
-                              <TreeTableColumn prefWidth="131.0" text="Professeur" />
-                          </columns>
-                        </TreeTableView>
-                         <Button onAction="#boutonAjouterClicked" layoutX="194.0" layoutY="277.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="213.0" text="Ajouter" />
-                     </children></AnchorPane>
+                            <children>
+                                <TreeTableView layoutX="37.0" layoutY="53.0" prefHeight="200.0" prefWidth="526.0">
+                                    <columns>
+                                        <TreeTableColumn prefWidth="131.0" text="Nom" />
+                                        <TreeTableColumn prefWidth="131.0" text="Code" />
+                                        <TreeTableColumn prefWidth="131.0" text="Description" />
+                                        <TreeTableColumn prefWidth="131.0" text="Professeur" />
+                                    </columns>
+                                </TreeTableView>
+                                <Button layoutX="194.0" layoutY="277.0" mnemonicParsing="false" onAction="#boutonAjouterClicked" prefHeight="25.0" prefWidth="213.0" text="Ajouter" />
+                            </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="PageEtudiant">
@@ -55,7 +57,41 @@
                 </Tab>
                 <Tab text="PageProfesseur">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0">
+                            <children>
+                                <Label layoutX="67.0" layoutY="86.0" prefHeight="21.0" prefWidth="45.0" text="Nom :">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="243.0" fx:id="nomProfesseur" />
+                                <TextField layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="243.0" fx:id="prenomProfesseur" />
+                                <Label layoutX="116.0" layoutY="27.0" prefHeight="32.0" prefWidth="335.0" text="Formulaire inscription Professeur" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial Unicode MS" size="22.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="50.0" layoutY="125.0" prefHeight="21.0" prefWidth="69.0" text="Prénom : ">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="32.0" layoutY="166.0" prefHeight="21.0" prefWidth="79.0" text="Identifiant : ">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField layoutX="140.0" layoutY="164.0" prefHeight="25.0" prefWidth="243.0" fx:id="identifiantProfesseur" />
+                                <Label layoutX="54.0" layoutY="215.0" prefHeight="21.0" prefWidth="58.0" text="Salaire : ">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField layoutX="140.0" layoutY="213.0" prefHeight="25.0" prefWidth="243.0" fx:id="SalaireProfesseur" />
+                                <Button layoutX="300.0" layoutY="257.0" mnemonicParsing="false" onAction="#EnvoyerProfesseurClicked" text="Envoyer" />
+                                <Button layoutX="172.0" layoutY="257.0" mnemonicParsing="false" onAction="#ReinitialiserProfesseurClicked" text="Réinitialiser" />
+                            </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="PageLogin">

@@ -130,7 +130,20 @@
                 </Tab>
                 <Tab text="PageLogin">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0">
+                     <children>
+                        <Button layoutX="307.0" layoutY="215.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="117.0"  onAction="#ConnexionClicked" text="Connexion" />
+                        <Button layoutX="163.0" layoutY="215.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="116.0"  onAction="#DeconnexionClicked" text="Déconnexion" />
+                        <Label layoutX="159.0" layoutY="14.0" text="Authentification User">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="78.0" text="Nom Utilisateur : " />
+                        <Label layoutX="78.0" layoutY="143.0" text="Mot de passe :" />
+                        <PasswordField layoutX="192.0" layoutY="139.0" prefHeight="25.0" prefWidth="226.0" fx:id="PasswordConnexion"/>
+                        <TextField layoutX="192.0" layoutY="74.0" prefHeight="25.0" prefWidth="229.0" fx:id="UserConnexion" />
+                     </children></AnchorPane>
                     </content>
                 </Tab>
             </tabs>

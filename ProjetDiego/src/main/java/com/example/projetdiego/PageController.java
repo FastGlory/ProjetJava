@@ -58,7 +58,7 @@ public class PageController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private boolean Authorisation =false;
+
 
 
     public void boutonBackClicked(ActionEvent event) throws IOException {
@@ -78,7 +78,7 @@ public class PageController {
     }
 
     public void EnvoyerProfesseurClicked(ActionEvent event) throws JsonProcessingException {
-        if(Authorisation==false){
+        if(Session.isIsAdmin()==false){
             System.out.println("Vous n'avez pas les autorisation nécessaire");
         }else {
 
@@ -127,7 +127,7 @@ public class PageController {
     }
 
     public void EnvoyerEtudiantClicked(ActionEvent event) throws JsonProcessingException {
-        if(Authorisation==false){
+        if(Session.isIsAdmin() == false){
             System.out.println("Vous n'avez pas les autorisation nécessaire");
         }else {
             String nom = nomEtudiant.getText();
@@ -196,8 +196,8 @@ public class PageController {
         if (users.has(username)) {
             JSONObject userRecuper = users.getJSONObject(username);
             if (userRecuper.getString("MotDePasse").equals(password)) {
-                Authorisation = userRecuper.getBoolean("AccesAdmin");
-                if (Authorisation) {
+                Session.setIsAdmin(userRecuper.getBoolean("AccesAdmin"));
+                if (Session.isIsAdmin()) {
                     System.out.println("Bienvenue Administrateur !");
                 } else {
                     System.out.println("Bienvenue étudiant !");
@@ -208,20 +208,20 @@ public class PageController {
         } else {
             System.out.println("Nom d'utilisateur ou mot de passe incorrect !");
         }
-        System.out.println(Authorisation);
+        System.out.println(Session.isIsAdmin());
     }
 
     // Aide : https://www.javatpoint.com/how-to-get-value-from-json-object-in-java-example#:~:text=getJsonObject()%20Method&text=It%20is%20used%20to%20get%20the%20(JsonObject)get(name,mapping%20for%20the%20parse%27s%20parameter.
     // Aide : https://processing.org/reference/JSONObject_getJSONObject_.html
 
     public void DeconnexionClicked(ActionEvent actionEvent) {
-        Authorisation = false;
+        Session.setIsAdmin(false);
         System.out.println("Déconnexion !");
-        System.out.println(Authorisation);
+        System.out.println(Session.isIsAdmin());
     }
 
     public void SendCours(ActionEvent actionEvent) throws JsonProcessingException {
-        if(Authorisation==true){
+        if(Session.isIsAdmin() == false){
             System.out.println("Vous n'avez pas les autorisation nécessaire");
         }else {
 
@@ -256,5 +256,21 @@ public class PageController {
                 System.out.println("Erreur lors de l'enregistrement du cours dans le fichier JSON.");
             }
         }
+    }
+
+    public void boutonAjouterProfesseur(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("InscriptionProf.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void boutonAjouterEtudiant(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("InscriptionEtudiant.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

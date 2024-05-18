@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageController">
+    <children>
+        <Label layoutX="67.0" layoutY="86.0" prefHeight="21.0" prefWidth="45.0" text="Nom :">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nomEtudiant" layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="243.0" />
+        <TextField fx:id="prenomEtudiant" layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="243.0" />
+        <Label layoutX="116.0" layoutY="27.0" prefHeight="32.0" prefWidth="335.0" text="Formulaire inscription Etudiant" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Unicode MS" size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="50.0" layoutY="125.0" prefHeight="21.0" prefWidth="69.0" text="Prénom : ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="32.0" layoutY="166.0" prefHeight="21.0" prefWidth="79.0" text="Identifiant : ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="identifiantEtudiant" layoutX="140.0" layoutY="164.0" prefHeight="25.0" prefWidth="243.0" />
+        <Label layoutX="54.0" layoutY="215.0" prefHeight="21.0" prefWidth="58.0" text="Côte R :">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CoteRetudiant" layoutX="140.0" layoutY="213.0" prefHeight="25.0" prefWidth="243.0" />
+        <Button layoutX="284.0" layoutY="271.0" mnemonicParsing="false" onAction="#EnvoyerEtudiantClicked" prefHeight="25.0" prefWidth="118.0" text="Envoyer" />
+        <Button layoutX="123.0" layoutY="271.0" mnemonicParsing="false" onAction="#ReinitialiserEtudiantClicked" prefHeight="25.0" prefWidth="118.0" text="Réinitialiser" />
+        <Button layoutX="203.0" layoutY="324.0" mnemonicParsing="false" onAction="#boutonBackClicked" prefHeight="25.0" prefWidth="118.0" text="Go back" />
+    </children>
+</AnchorPane>

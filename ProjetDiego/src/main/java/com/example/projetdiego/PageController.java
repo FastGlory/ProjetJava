@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -18,6 +19,13 @@ import org.json.JSONObject;
 
 
 public class PageController {
+
+    @FXML
+    private TextArea DescriptionCours;
+    @FXML
+    private TextField NomCours;
+    @FXML
+    private TextField CodeCours;
 
     @FXML
     private TextField nomProfesseur;
@@ -137,7 +145,7 @@ public class PageController {
             System.out.println("Nom: " + Etudiant.getNom());
             System.out.println("Prenom: " + Etudiant.getPrenom());
             System.out.println("Identifiant: " + Etudiant.getIdentifiant());
-            System.out.println("Salaire: " + Etudiant.getCoteR());
+            System.out.println("Cote: " + Etudiant.getCoteR());
 
             ObjectMapper objectMapper = new ObjectMapper();
             String json = objectMapper.writeValueAsString(Etudiant);
@@ -210,5 +218,43 @@ public class PageController {
         Authorisation = false;
         System.out.println("Déconnexion !");
         System.out.println(Authorisation);
+    }
+
+    public void SendCours(ActionEvent actionEvent) throws JsonProcessingException {
+        if(Authorisation==true){
+            System.out.println("Vous n'avez pas les autorisation nécessaire");
+        }else {
+
+            String descriptioncours = DescriptionCours.getText();
+            String nomcours =NomCours.getText();
+            String Code =CodeCours.getText();
+            cours Cours = new cours();
+
+            Cours.setNom(nomcours);
+            Cours.setDescription(descriptioncours);
+            Cours.setCode(Code);
+
+
+            System.out.println("Nom de cours: " +Cours.getNom() );
+            System.out.println("Code cours: " +Cours.getCode() );
+            System.out.println("Description Cours: " +Cours.getDescription() );
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            String json = objectMapper.writeValueAsString(Cours);
+            System.out.println("JSON représentant Etudiant :");
+            System.out.println(json);
+
+            cours deserializedCours = objectMapper.readValue(json, cours.class);
+            System.out.println("\nObjet Etudiant désérialisé :");
+            System.out.println(deserializedCours);
+
+            try {
+                Cours.serialize(Cours);
+                System.out.println("Cours enregistré dans le fichier JSON.");
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.out.println("Erreur lors de l'enregistrement du cours dans le fichier JSON.");
+            }
+        }
     }
 }

@@ -13,10 +13,10 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ListView layoutX="473.0" layoutY="125.0" prefHeight="124.0" prefWidth="118.0" />
-            <TextArea layoutX="140.0" layoutY="165.0" prefHeight="83.0" prefWidth="291.0" />
-            <TextField layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="291.0" />
-            <TextField layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="291.0" />
+            <ListView layoutX="473.0" layoutY="125.0" prefHeight="124.0" prefWidth="118.0" fx:id="ListeProf" />
+            <TextArea layoutX="140.0" layoutY="165.0" prefHeight="83.0" prefWidth="291.0" fx:id="DescriptionCours"/>
+            <TextField layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="291.0" fx:id="NomCours"/>
+            <TextField layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="291.0" fx:id="CodeCours"/>
             <Label layoutX="151.0" layoutY="27.0" prefHeight="32.0" prefWidth="298.0" text="Formulaire inscription Cours" textAlignment="CENTER">
                <font>
                   <Font name="Arial Unicode MS" size="22.0" />
@@ -38,7 +38,7 @@
                </font>
             </Label>
             <Button layoutX="129.0" onAction="#boutonBackClicked" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Go back" />
-            <Button layoutX="313.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Send" />
+            <Button layoutX="313.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Send" onAction="#SendCours"/>
          </children></AnchorPane>
    </children>
 </Pane>

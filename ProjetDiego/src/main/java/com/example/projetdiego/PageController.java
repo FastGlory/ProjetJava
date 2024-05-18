@@ -27,6 +27,18 @@ public class PageController {
     @FXML
     private TextField SalaireProfesseur;
 
+    @FXML
+    private TextField nomEtudiant;
+
+    @FXML
+    private TextField prenomEtudiant;
+
+    @FXML
+    private TextField identifiantEtudiant;
+
+    @FXML
+    private TextField CoteRetudiant;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -88,6 +100,50 @@ public class PageController {
         prenomProfesseur.clear();
         identifiantProfesseur.clear();
         SalaireProfesseur.clear();
+        System.out.println("Réinitalisation !");
+    }
+
+    public void EnvoyerEtudiantClicked(ActionEvent event) throws JsonProcessingException {
+        String nom = nomEtudiant.getText();
+        String prenom = prenomEtudiant.getText();
+        String identifiant = identifiantEtudiant.getText();
+        String coteR = CoteRetudiant.getText();
+        etudiant Etudiant = new etudiant();
+
+        Etudiant.setNom(nom);
+        Etudiant.setPrenom(prenom);
+        Etudiant.setIdentifiant(identifiant);
+        double salaireEtudiantDouble = Double.parseDouble(coteR);
+        Etudiant.setCoteR(salaireEtudiantDouble);
+
+        System.out.println("Nom: " + Etudiant.getNom());
+        System.out.println("Prenom: " + Etudiant.getPrenom());
+        System.out.println("Identifiant: " + Etudiant.getIdentifiant());
+        System.out.println("Salaire: " + Etudiant.getCoteR());
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = objectMapper.writeValueAsString(Etudiant);
+        System.out.println("JSON représentant Etudiant :");
+        System.out.println(json);
+
+        etudiant deserializedEtudiant = objectMapper.readValue(json, etudiant.class);
+        System.out.println("\nObjet Etudiant désérialisé :");
+        System.out.println(deserializedEtudiant);
+
+        try {
+            Etudiant.serialize(Etudiant);
+            System.out.println("Etudiant enregistré dans le fichier JSON.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erreur lors de l'enregistrement de l'étudiant dans le fichier JSON.");
+        }
+    }
+
+    public void ReinitialiserEtudiantClicked(ActionEvent event) {
+        nomEtudiant.clear();
+        prenomEtudiant.clear();
+        identifiantEtudiant.clear();
+        CoteRetudiant.clear();
         System.out.println("Réinitalisation !");
     }
 }

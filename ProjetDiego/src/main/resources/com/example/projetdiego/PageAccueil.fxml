@@ -52,7 +52,41 @@
                 </Tab>
                 <Tab text="PageEtudiant">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="565.0">
+                            <children>
+                                <Label layoutX="67.0" layoutY="86.0" prefHeight="21.0" prefWidth="45.0" text="Nom :">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="nomEtudiant" layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="243.0" />
+                                <TextField fx:id="prenomEtudiant" layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="243.0" />
+                                <Label layoutX="116.0" layoutY="27.0" prefHeight="32.0" prefWidth="335.0" text="Formulaire inscription Etudiant" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial Unicode MS" size="22.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="50.0" layoutY="125.0" prefHeight="21.0" prefWidth="69.0" text="Prénom : ">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="32.0" layoutY="166.0" prefHeight="21.0" prefWidth="79.0" text="Identifiant : ">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="identifiantEtudiant" layoutX="140.0" layoutY="164.0" prefHeight="25.0" prefWidth="243.0" />
+                                <Label layoutX="54.0" layoutY="215.0" prefHeight="21.0" prefWidth="58.0" text="Côte R :">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="CoteRetudiant" layoutX="140.0" layoutY="213.0" prefHeight="25.0" prefWidth="243.0" />
+                                <Button layoutX="300.0" layoutY="257.0" mnemonicParsing="false" onAction="#EnvoyerEtudiantClicked" text="Envoyer" />
+                                <Button layoutX="172.0" layoutY="257.0" mnemonicParsing="false" onAction="#ReinitialiserEtudiantClicked" text="Réinitialiser" />
+                            </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="PageProfesseur">
@@ -64,8 +98,8 @@
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                                <TextField layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="243.0" fx:id="nomProfesseur" />
-                                <TextField layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="243.0" fx:id="prenomProfesseur" />
+                                <TextField fx:id="nomProfesseur" layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="243.0" />
+                                <TextField fx:id="prenomProfesseur" layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="243.0" />
                                 <Label layoutX="116.0" layoutY="27.0" prefHeight="32.0" prefWidth="335.0" text="Formulaire inscription Professeur" textAlignment="CENTER">
                                     <font>
                                         <Font name="Arial Unicode MS" size="22.0" />
@@ -81,13 +115,13 @@
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                                <TextField layoutX="140.0" layoutY="164.0" prefHeight="25.0" prefWidth="243.0" fx:id="identifiantProfesseur" />
+                                <TextField fx:id="identifiantProfesseur" layoutX="140.0" layoutY="164.0" prefHeight="25.0" prefWidth="243.0" />
                                 <Label layoutX="54.0" layoutY="215.0" prefHeight="21.0" prefWidth="58.0" text="Salaire : ">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                                <TextField layoutX="140.0" layoutY="213.0" prefHeight="25.0" prefWidth="243.0" fx:id="SalaireProfesseur" />
+                                <TextField fx:id="SalaireProfesseur" layoutX="140.0" layoutY="213.0" prefHeight="25.0" prefWidth="243.0" />
                                 <Button layoutX="300.0" layoutY="257.0" mnemonicParsing="false" onAction="#EnvoyerProfesseurClicked" text="Envoyer" />
                                 <Button layoutX="172.0" layoutY="257.0" mnemonicParsing="false" onAction="#ReinitialiserProfesseurClicked" text="Réinitialiser" />
                             </children>

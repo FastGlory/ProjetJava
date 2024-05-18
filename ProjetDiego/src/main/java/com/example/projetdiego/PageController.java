@@ -184,11 +184,11 @@ public class PageController {
         admin.put("MotDePasse", "admin123");
         admin.put("AccesAdmin", true);
         users.put("admin", admin);
-
+        // La logique derrière est simple : On va vérifie si le nom saisi est bien présent dans le fichier json, si oui on va récupérer les information dans un objet et on va comparer pour voir si le mot de passe et bon. Une fois que ca c'est bon on va simplement récupérer son autorisation et le set
         if (users.has(username)) {
-            JSONObject user = users.getJSONObject(username);
-            if (user.getString("MotDePasse").equals(password)) {
-                Authorisation = user.getBoolean("AccesAdmin");
+            JSONObject userRecuper = users.getJSONObject(username);
+            if (userRecuper.getString("MotDePasse").equals(password)) {
+                Authorisation = userRecuper.getBoolean("AccesAdmin");
                 if (Authorisation) {
                     System.out.println("Bienvenue Administrateur !");
                 } else {
@@ -204,7 +204,7 @@ public class PageController {
     }
 
     // Aide : https://www.javatpoint.com/how-to-get-value-from-json-object-in-java-example#:~:text=getJsonObject()%20Method&text=It%20is%20used%20to%20get%20the%20(JsonObject)get(name,mapping%20for%20the%20parse%27s%20parameter.
-
+    // Aide : https://processing.org/reference/JSONObject_getJSONObject_.html
 
     public void DeconnexionClicked(ActionEvent actionEvent) {
         Authorisation = false;

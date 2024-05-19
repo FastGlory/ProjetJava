@@ -92,10 +92,7 @@ public class professeur extends personne{
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            // Lecture du fichier JSON en tant que nœud JSON
             JsonNode rootNode = objectMapper.readTree(new File(path));
-
-            // Parcourir les nœuds JSON pour récupérer les noms des professeurs
             Iterator<String> fieldNames = rootNode.fieldNames();
             while (fieldNames.hasNext()) {
                 String nom = fieldNames.next();
@@ -108,7 +105,7 @@ public class professeur extends personne{
 
         return noms;
     }
-    // aide : https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
+
     public static List<professeur> getAllProfesseurs() throws IOException {
         List<professeur> Professeur = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
@@ -134,4 +131,6 @@ public class professeur extends personne{
 
 }
 
-// https://www.baeldung.com/jackson-json-node-tree-model (Copilot m'a proposé cette solution, voici des informations supplémentaire)
+// https://www.baeldung.com/jackson-json-node-tree-model (Copilot m'a proposé de légère modification, voici en plus des informations supplémentaire que je me suis basé)
+// Ce code ce base aussi sur les notes de cours de Mr.Fostiné
+// aide : https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/

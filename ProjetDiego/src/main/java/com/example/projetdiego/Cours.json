@@ -1,26 +1,14 @@
 {
-  "test1" : {
-    "code" : "test1",
-    "description" : "test1",
-    "nom" : "test1",
+  "Objet orienté " : {
+    "code" : "340-V303",
+    "description" : "Cours basé sur le langague de programmation Java",
+    "nom" : "Objet orienté ",
     "professeur" : null
   },
-  "test2" : {
-    "code" : "test2",
-    "description" : "test2",
-    "nom" : "test2",
-    "professeur" : null
-  },
-  "asfasf" : {
-    "code" : "asfasf",
-    "nom" : "asfasf",
-    "description" : "asfasf",
-    "professeur" : null
-  },
-  "test" : {
-    "description" : "121212",
-    "code" : "Juba",
-    "nom" : "test",
+  "Developpement Entreprise" : {
+    "description" : "Cours donnée en session 4",
+    "code" : "VS-303",
+    "nom" : "Developpement Entreprise",
     "professeur" : null
   }
 }

@@ -18,8 +18,6 @@ public class cours {
     private String Professeur; // Change this to String to match your FXML
 
     private static final String path = "src/main/java/com/example/projetdiego/Cours.json";
-
-    // Getters and Setters
     public String getNom() {
         return Nom;
     }
@@ -62,7 +60,6 @@ public class cours {
                 '}';
     }
 
-    // Serialization method
     public static void serialize(cours cours, String filePath) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -85,8 +82,6 @@ public class cours {
     public static void serialize(cours cours) throws IOException {
         serialize(cours, path);
     }
-
-    // Deserialization method
     public static cours deserialize(String filePath, String nom) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         File file = new File(filePath);
@@ -108,8 +103,6 @@ public class cours {
     public static cours deserialize(String identifiant) throws IOException {
         return deserialize(path, identifiant);
     }
-
-    // Load all courses from JSON
     public static List<cours> getAllCours(String filePath) throws IOException {
         List<cours> coursList = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
@@ -131,3 +124,6 @@ public class cours {
         return coursList;
     }
 }
+// https://www.baeldung.com/jackson-json-node-tree-model (Copilot m'a proposé de légère modification, voici en plus des informations supplémentaire que je me suis basé)
+// Ce code ce base aussi sur les notes de cours de Mr.Fostiné
+// aide : https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/

@@ -360,3 +360,29 @@ public class PageController {
         stage.show();
     }
 }
+
+// Le changement de scène ce base sur cette vidéo : https://www.youtube.com/watch?v=hcM-R-YOKkQ
+// Certain trycatch est généré soit par Intellij (Grande majorité )soit par une Ai afin de pouvoir mieux saisir les bug
+// Le fait de pouvoir récupérer les informations du json ce base sur ces vidéos / sites  :
+// 1 : https://jenkov.com/tutorials/javafx/treetableview.html / https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/TableView.html
+// 2 : https://www.youtube.com/watch?v=vego72w5kPU
+
+// L'idée de séparer les initializeColumns et initializeTreeTableViews vient de mon projet C# en entreprise / meme chose pour les connaissance de initialize
+// la ligne 25 - 55 n'était pas comme cela à la base, il était complétement en désorde car je codais au fur et à mesure que j'avais besoin de ses élément (J'ai demandé a chat de réorganisé le tout)
+
+
+// !!!!!!!!!!!!!! IMPORTANT DÉBUG !!!!!!!!!!!!!! //
+
+/*
+*
+*   Lorsque vous allez vouloir ajouter un user, un cours ou encore un prof il y aura un bug. Il faudra bien faire les étapes suivantes pour réussir à controuner
+*   le problème.
+*
+*  1 : Connectez-vous avez un compte administrateur : User : admin MDP : admin123
+*  2 : Vous pourrez dorénavnant ajouter un utilisateur ou un cours
+*  3 : L'application aura une erreur à cause du null element
+*  4 : Redémarrer l'application (Votre ajout sera sauvegarder !)
+*
+*
+*
+* */

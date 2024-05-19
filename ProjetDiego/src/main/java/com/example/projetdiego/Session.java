@@ -11,3 +11,5 @@ public class Session {
         IsAdmin = isAdmin;
     }
 }
+
+// Une idée qui vient de mes cours de developpement web + entreprise (facile à mettre en oeuvre)

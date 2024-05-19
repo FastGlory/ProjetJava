@@ -100,3 +100,8 @@ public class etudiant extends personne {
     }
 
 }
+
+
+// https://www.baeldung.com/jackson-json-node-tree-model (Copilot m'a proposé de légère modification, voici en plus des informations supplémentaire que je me suis basé)
+// Ce code ce base aussi sur les notes de cours de Mr.Fostiné
+// aide : https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/

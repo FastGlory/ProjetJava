@@ -1,14 +1,8 @@
 {
-  "test1" : {
-    "nom" : "test1",
-    "prenom" : "test1",
-    "salaire" : 123.0,
-    "identifiant" : "test1"
-  },
-  "test2" : {
-    "nom" : "test2",
-    "prenom" : "test2",
-    "salaire" : 12311.0,
-    "identifiant" : "test2"
+  "Fostiné" : {
+    "nom" : "Fostiné",
+    "prenom" : "Samuel",
+    "salaire" : 100000.0,
+    "identifiant" : "420-210-MV"
   }
 }

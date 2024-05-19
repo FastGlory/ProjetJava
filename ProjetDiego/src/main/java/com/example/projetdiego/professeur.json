@@ -1,6 +1,14 @@
 {
-  "nom" : "asfas",
-  "prenom" : "fasfasf",
-  "salaire" : 1233.0,
-  "identifiant" : "asfasf"
+  "test1" : {
+    "nom" : "test1",
+    "prenom" : "test1",
+    "salaire" : 123.0,
+    "identifiant" : "test1"
+  },
+  "test2" : {
+    "nom" : "test2",
+    "prenom" : "test2",
+    "salaire" : 12311.0,
+    "identifiant" : "test2"
+  }
 }

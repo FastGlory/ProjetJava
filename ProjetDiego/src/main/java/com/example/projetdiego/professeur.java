@@ -1,7 +1,9 @@
 package com.example.projetdiego;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +11,7 @@ import java.io.IOException;
 public class professeur extends personne{
     private double salaire;
     private static final String path = "src/main/java/com/example/projetdiego/professeur.json";
+
     public double getSalaire() {
         return salaire;
     }
@@ -30,23 +33,47 @@ public class professeur extends personne{
     public static void serialize(professeur Professeur, String filePath) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
-        mapper.writeValue(new File(filePath), Professeur);
+
+        ObjectNode rootNode;
+        File file = new File(filePath);
+
+        if (file.exists()) {
+            rootNode = (ObjectNode) mapper.readTree(file);
+        } else {
+            rootNode = mapper.createObjectNode();
+        }
+
+        ObjectNode professeurNode = mapper.valueToTree(Professeur);
+        rootNode.set(Professeur.getNom(), professeurNode);
+
+        mapper.writeValue(file, rootNode);
     }
 
-    //  Ici je rajoute ca parce que
     public static void serialize(professeur Professeur) throws IOException {
         serialize(Professeur, path);
     }
 
-    public static professeur deserialize(String filePath) throws IOException {
+    public static professeur deserialize(String filePath, String nom) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-        return mapper.readValue(new File(filePath), professeur.class);
+        File file = new File(filePath);
+
+        if (!file.exists()) {
+            throw new IOException("Le fichier JSON n'existe pas.");
+        }
+
+        JsonNode rootNode = mapper.readTree(file);
+        JsonNode professeurNode = rootNode.get(nom);
+
+        if (professeurNode == null) {
+            throw new IOException("Le professeur avec l'identifiant spécifié n'a pas été trouvé.");
+        }
+
+        return mapper.treeToValue(professeurNode, professeur.class);
     }
 
-    public static professeur deserialize() throws IOException {
-        return deserialize(path);
+    public static professeur deserialize(String identifiant) throws IOException {
+        return deserialize(path, identifiant);
     }
-
-
 }
+
+// https://www.baeldung.com/jackson-json-node-tree-model (Copilot m'a proposé cette solution, voici des informations supplémentaire)

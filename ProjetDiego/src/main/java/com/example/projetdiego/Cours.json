@@ -1,6 +1,14 @@
 {
-  "description" : "123",
-  "code" : "asfas",
-  "nom" : "asfasf",
-  "professeur" : null
+  "test1" : {
+    "code" : "test1",
+    "description" : "test1",
+    "nom" : "test1",
+    "professeur" : null
+  },
+  "test2" : {
+    "code" : "test2",
+    "description" : "test2",
+    "nom" : "test2",
+    "professeur" : null
+  }
 }

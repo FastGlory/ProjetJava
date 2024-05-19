@@ -34,6 +34,7 @@
             <Button layoutX="151.0" layoutY="281.0" mnemonicParsing="false" onAction="#boutonBackClicked" prefHeight="25.0" prefWidth="118.0" text="Go back" />
             <Button layoutX="313.0" layoutY="281.0" mnemonicParsing="false" onAction="#SendCours" prefHeight="25.0" prefWidth="118.0" text="Send" />
             <Button layoutX="459.0" layoutY="124.0" mnemonicParsing="false" onAction="#GoToTableView" prefHeight="83.0" prefWidth="118.0" text="Choisir Prof" />
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
    </children>
 </Pane>

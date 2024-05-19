@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class etudiant extends personne {
     private double CoteR;
@@ -73,4 +76,27 @@ public class etudiant extends personne {
     public static etudiant deserialize(String nom) throws IOException {
         return deserialize(path, nom);
     }
+
+    public static List<etudiant> getAllEtudiants() throws IOException {
+        List<etudiant> etudiants = new ArrayList<>();
+        ObjectMapper mapper = new ObjectMapper();
+        File file = new File(path);
+
+        if (!file.exists()) {
+            throw new IOException("Le fichier JSON n'existe pas.");
+        }
+
+        JsonNode rootNode = mapper.readTree(file);
+
+        Iterator<String> fieldNames = rootNode.fieldNames();
+        while (fieldNames.hasNext()) {
+            String identifiant = fieldNames.next();
+            JsonNode etudiantNode = rootNode.get(identifiant);
+            etudiant etudiant = mapper.treeToValue(etudiantNode, etudiant.class);
+            etudiants.add(etudiant);
+        }
+
+        return etudiants;
+    }
+
 }

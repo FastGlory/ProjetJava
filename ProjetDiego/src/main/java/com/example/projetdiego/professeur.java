@@ -15,6 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 
 public class professeur extends personne{
@@ -108,6 +109,27 @@ public class professeur extends personne{
         return noms;
     }
     // aide : https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
+    public static List<professeur> getAllProfesseurs() throws IOException {
+        List<professeur> Professeur = new ArrayList<>();
+        ObjectMapper mapper = new ObjectMapper();
+        File file = new File(path);
+
+        if (!file.exists()) {
+            throw new IOException("Le fichier JSON n'existe pas.");
+        }
+
+        JsonNode rootNode = mapper.readTree(file);
+
+        Iterator<String> fieldNames = rootNode.fieldNames();
+        while (fieldNames.hasNext()) {
+            String identifiant = fieldNames.next();
+            JsonNode professeurNode = rootNode.get(identifiant);
+            professeur professeur = mapper.treeToValue(professeurNode, professeur.class);
+            Professeur.add(professeur);
+        }
+
+        return Professeur;
+    }
 
 
 }

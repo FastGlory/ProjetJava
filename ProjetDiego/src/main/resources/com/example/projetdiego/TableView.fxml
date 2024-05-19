@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="373.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.ListViewController">
+    <children>
+        <ListView fx:id="listView" layoutX="100.0" layoutY="68.0" prefHeight="178.0" prefWidth="455.0" />
+        <Label layoutX="220.0" layoutY="14.0" text="Choisir le professeur">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label fx:id="selection" layoutX="301.0" layoutY="255.0" text="Choix...">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <Button layoutX="228.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Back" onAction="#backBouton" />
+        <Button layoutX="341.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Confirmer" onAction="#confirmerChoix"/>
+    </children>
+</AnchorPane>

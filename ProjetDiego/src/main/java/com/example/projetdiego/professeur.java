@@ -4,9 +4,18 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class professeur extends personne{
     private double salaire;
@@ -19,6 +28,8 @@ public class professeur extends personne{
     public void setSalaire(double salaire) {
         this.salaire = salaire;
     }
+
+
 
     @Override
     public String toString() {
@@ -74,6 +85,31 @@ public class professeur extends personne{
     public static professeur deserialize(String identifiant) throws IOException {
         return deserialize(path, identifiant);
     }
+
+    public static ArrayList<String> recuperationNames() throws IOException {
+        ArrayList<String> noms = new ArrayList<>();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            // Lecture du fichier JSON en tant que nœud JSON
+            JsonNode rootNode = objectMapper.readTree(new File(path));
+
+            // Parcourir les nœuds JSON pour récupérer les noms des professeurs
+            Iterator<String> fieldNames = rootNode.fieldNames();
+            while (fieldNames.hasNext()) {
+                String nom = fieldNames.next();
+                noms.add(nom);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw e;
+        }
+
+        return noms;
+    }
+    // aide : https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
+
+
 }
 
 // https://www.baeldung.com/jackson-json-node-tree-model (Copilot m'a proposé cette solution, voici des informations supplémentaire)

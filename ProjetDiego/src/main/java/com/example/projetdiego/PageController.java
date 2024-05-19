@@ -1,24 +1,32 @@
 package com.example.projetdiego;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
+import org.json.simple.parser.ParseException;
 
 
 public class PageController {
+
 
     @FXML
     private TextArea DescriptionCours;
@@ -59,6 +67,8 @@ public class PageController {
     private Scene scene;
     private Parent root;
 
+    public PageController() throws IOException, ParseException {
+    }
 
 
     public void boutonBackClicked(ActionEvent event) throws IOException {
@@ -273,4 +283,15 @@ public class PageController {
         stage.setScene(scene);
         stage.show();
     }
+
+
+    public void GoToTableView(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("TableView.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
+
+

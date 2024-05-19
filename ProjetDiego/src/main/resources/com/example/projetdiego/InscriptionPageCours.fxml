@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageController" >
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetdiego.PageController">
    <children>
       <AnchorPane layoutY="-13.0" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -13,10 +13,9 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <ListView layoutX="473.0" layoutY="125.0" prefHeight="124.0" prefWidth="118.0" fx:id="ListeProf" />
-            <TextArea layoutX="140.0" layoutY="165.0" prefHeight="83.0" prefWidth="291.0" fx:id="DescriptionCours"/>
-            <TextField layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="291.0" fx:id="NomCours"/>
-            <TextField layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="291.0" fx:id="CodeCours"/>
+            <TextArea fx:id="DescriptionCours" layoutX="140.0" layoutY="165.0" prefHeight="83.0" prefWidth="291.0" />
+            <TextField fx:id="NomCours" layoutX="140.0" layoutY="84.0" prefHeight="25.0" prefWidth="291.0" />
+            <TextField fx:id="CodeCours" layoutX="140.0" layoutY="124.0" prefHeight="25.0" prefWidth="291.0" />
             <Label layoutX="151.0" layoutY="27.0" prefHeight="32.0" prefWidth="298.0" text="Formulaire inscription Cours" textAlignment="CENTER">
                <font>
                   <Font name="Arial Unicode MS" size="22.0" />
@@ -32,13 +31,9 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="473.0" layoutY="95.0" prefHeight="21.0" prefWidth="118.0" text="Liste Professeur">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Button layoutX="129.0" onAction="#boutonBackClicked" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Go back" />
-            <Button layoutX="313.0" layoutY="281.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Send" onAction="#SendCours"/>
+            <Button layoutX="151.0" layoutY="281.0" mnemonicParsing="false" onAction="#boutonBackClicked" prefHeight="25.0" prefWidth="118.0" text="Go back" />
+            <Button layoutX="313.0" layoutY="281.0" mnemonicParsing="false" onAction="#SendCours" prefHeight="25.0" prefWidth="118.0" text="Send" />
+            <Button layoutX="459.0" layoutY="124.0" mnemonicParsing="false" onAction="#GoToTableView" prefHeight="83.0" prefWidth="118.0" text="Choisir Prof" />
          </children></AnchorPane>
    </children>
 </Pane>
